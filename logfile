@@ -41,3 +41,11 @@
 2020-09-06 00:13:51.334 BST [385] LOG:  redo done at 0/2C9D798
 2020-09-06 00:13:51.536 BST [384] LOG:  database system is ready to accept connections
 2020-09-06 00:28:52.785 BST [386] WARNING:  could not flush dirty data: Function not implemented
+2020-09-06 14:03:25.193 BST [3251] ERROR:  database "powauthproject_dev" already exists
+2020-09-06 14:03:25.193 BST [3251] STATEMENT:  CREATE DATABASE "powauthproject_dev" ENCODING 'UTF8'
+2020-09-06 14:05:02.074 BST [3369] ERROR:  database "powauthproject_dev" is being accessed by other users
+2020-09-06 14:05:02.074 BST [3369] DETAIL:  There are 2 other sessions using the database.
+2020-09-06 14:05:02.074 BST [3369] STATEMENT:  DROP DATABASE "powauthproject_dev"
+2020-09-06 14:05:11.739 BST [3420] WARNING:  could not flush dirty data: Function not implemented
+2020-09-06 14:10:02.209 BST [3642] WARNING:  could not flush dirty data: Function not implemented
+2020-09-06 14:11:18.712 BST [3710] WARNING:  could not flush dirty data: Function not implemented

@@ -4,6 +4,14 @@ defmodule PowauthprojectWeb.VideoController do
 
   alias Powauthproject.Videos
 
+  plug :load_categories when action in [:new, :create, :edit, :update]
+
+    defp load_categories(conn, _) do
+      assign(conn, :categories, Videos.list_alphabetical_categories())
+    end
+
+
+
 
   def index(conn, _params) do
       current_user = Pow.Plug.current_user(conn)

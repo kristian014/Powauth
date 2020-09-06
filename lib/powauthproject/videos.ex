@@ -6,7 +6,7 @@ defmodule Powauthproject.Videos do
   import Ecto.Query, warn: false
   alias Powauthproject.Repo
 alias Powauthproject.Accounts.Video
-  # alias Powauthproject.Accounts.Account
+   alias Powauthproject.Accounts.Category
     alias Powauthproject.Accounts
     # alias Powauthproject.Accounts.User
   @doc """
@@ -18,6 +18,17 @@ alias Powauthproject.Accounts.Video
       [%Video{}, ...]
 
   """
+
+  def create_category!(name) do
+  Repo.insert!(%Category{name: name}, on_conflict: :nothing)
+end
+
+
+def list_alphabetical_categories do
+  Category
+  |> Category.alphabetical()
+  |> Repo.all()
+end
 
   def create_video(attrs \\ %{}) do
     %Video{}

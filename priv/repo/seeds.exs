@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Powauthproject.Videos
+for category <- ~w(Action Drama Romanace Comedy Sci-fi Programming Tv-Series) do
+  Videos.create_category!(category)
+end
