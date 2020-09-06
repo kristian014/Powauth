@@ -3,7 +3,7 @@ defmodule PowauthprojectWeb.Router do
    use Pow.Phoenix.Router
    use Pow.Extension.Phoenix.Router,
      extensions: [PowResetPassword, PowEmailConfirmation, PowInvitation]
-     
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -12,13 +12,14 @@ defmodule PowauthprojectWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated, error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
 
   scope "/" do
    pipe_through :browser
@@ -28,7 +29,7 @@ defmodule PowauthprojectWeb.Router do
  end
 
   scope "/", PowauthprojectWeb do
-    pipe_through :browser
+    pipe_through [:browser, :protected]
 
 # resources "/users", UserController
  resources "/videos", VideoController

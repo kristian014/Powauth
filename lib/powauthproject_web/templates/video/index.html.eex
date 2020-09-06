@@ -11,6 +11,10 @@
     </tr>
   </thead>
   <tbody>
+    <%= if Enum.empty?(@videos) do %>
+  <p>You haven't added any video</p>
+<% end %>
+
 <%= for video <- @videos do %>
     <tr>
       <td><%= video.url %></td>

@@ -1,13 +1,14 @@
 defmodule PowauthprojectWeb.VideoController do
   use PowauthprojectWeb, :controller
 
-alias PowauthprojectWeb.Plug.ReloadUser
+
   alias Powauthproject.Videos
 
 
   def index(conn, _params) do
       current_user = Pow.Plug.current_user(conn)
-    videos = Videos.list_videos()
+    account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    videos = Videos.get_account_video(account)
     render(conn, "index.html", videos: videos)
   end
 

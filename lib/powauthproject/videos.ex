@@ -6,7 +6,9 @@ defmodule Powauthproject.Videos do
   import Ecto.Query, warn: false
   alias Powauthproject.Repo
 alias Powauthproject.Accounts.Video
-
+  # alias Powauthproject.Accounts.Account
+    alias Powauthproject.Accounts
+    # alias Powauthproject.Accounts.User
   @doc """
   Returns the list of videos.
 
@@ -30,8 +32,14 @@ alias Powauthproject.Accounts.Video
   end
 
 
-  def get_account_video(account_id) do
-    Repo.all(from c in Video, where: c.account_id == ^account_id)
+  def get_account_video(%Accounts.Account{} = account) do
+    Video
+    |> videos_query(account)
+    |> Repo.all()
+  end
+
+  defp videos_query(query, %Accounts.Account{id: account_id}) do
+    from(v in query, where: v.account_id == ^account_id)
   end
 
 
