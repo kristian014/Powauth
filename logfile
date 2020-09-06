@@ -1,0 +1,43 @@
+2020-09-05 09:47:42.506 BST [385] LOG:  starting PostgreSQL 12.3 on x86_64-pc-linux-gnu, compiled by gcc-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+2020-09-05 09:47:42.561 BST [385] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-05 09:47:42.561 BST [385] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-05 09:47:42.572 BST [385] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-09-05 09:47:44.168 BST [386] LOG:  database system was interrupted; last known up at 2020-09-05 02:02:03 BST
+2020-09-05 09:47:44.178 BST [386] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 09:47:49.678 BST [386] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-09-05 09:47:49.698 BST [386] LOG:  redo starts at 0/2BA0A30
+2020-09-05 09:47:49.698 BST [386] LOG:  invalid record length at 0/2BA0B18: wanted 24, got 0
+2020-09-05 09:47:49.698 BST [386] LOG:  redo done at 0/2BA0AE0
+2020-09-05 09:47:49.836 BST [385] LOG:  database system is ready to accept connections
+2020-09-05 10:32:51.106 BST [387] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 10:34:18.960 BST [631] ERROR:  database "powauthproject_dev" is being accessed by other users
+2020-09-05 10:34:18.960 BST [631] DETAIL:  There is 1 other session using the database.
+2020-09-05 10:34:18.960 BST [631] STATEMENT:  DROP DATABASE "powauthproject_dev"
+2020-09-05 10:45:09.591 BST [889] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 10:47:12.617 BST [959] ERROR:  database "powauthproject_dev" already exists
+2020-09-05 10:47:12.617 BST [959] STATEMENT:  CREATE DATABASE "powauthproject_dev" ENCODING 'UTF8'
+2020-09-05 10:47:52.942 BST [1026] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 11:05:17.932 BST [1523] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 11:11:07.519 BST [1746] ERROR:  database "powauthproject_dev" already exists
+2020-09-05 11:11:07.519 BST [1746] STATEMENT:  CREATE DATABASE "powauthproject_dev" ENCODING 'UTF8'
+2020-09-05 12:34:46.770 BST [2258] ERROR:  database "powauthproject_dev" already exists
+2020-09-05 12:34:46.770 BST [2258] STATEMENT:  CREATE DATABASE "powauthproject_dev" ENCODING 'UTF8'
+2020-09-05 12:38:31.137 BST [2332] ERROR:  database "powauthproject_dev" already exists
+2020-09-05 12:38:31.137 BST [2332] STATEMENT:  CREATE DATABASE "powauthproject_dev" ENCODING 'UTF8'
+2020-09-05 12:42:25.772 BST [2486] ERROR:  database "powauthproject_dev" is being accessed by other users
+2020-09-05 12:42:25.772 BST [2486] DETAIL:  There is 1 other session using the database.
+2020-09-05 12:42:25.772 BST [2486] STATEMENT:  DROP DATABASE "powauthproject_dev"
+2020-09-05 12:42:37.903 BST [2537] WARNING:  could not flush dirty data: Function not implemented
+2020-09-05 13:48:17.220 BST [3058] WARNING:  could not flush dirty data: Function not implemented
+2020-09-06 00:13:44.179 BST [384] LOG:  starting PostgreSQL 12.3 on x86_64-pc-linux-gnu, compiled by gcc-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+2020-09-06 00:13:44.230 BST [384] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-06 00:13:44.230 BST [384] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-06 00:13:44.239 BST [384] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-09-06 00:13:45.441 BST [385] LOG:  database system was interrupted; last known up at 2020-09-05 14:03:18 BST
+2020-09-06 00:13:45.447 BST [385] WARNING:  could not flush dirty data: Function not implemented
+2020-09-06 00:13:51.317 BST [385] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-09-06 00:13:51.331 BST [385] LOG:  redo starts at 0/2C9CF88
+2020-09-06 00:13:51.334 BST [385] LOG:  invalid record length at 0/2C9D7D0: wanted 24, got 0
+2020-09-06 00:13:51.334 BST [385] LOG:  redo done at 0/2C9D798
+2020-09-06 00:13:51.536 BST [384] LOG:  database system is ready to accept connections
+2020-09-06 00:28:52.785 BST [386] WARNING:  could not flush dirty data: Function not implemented
