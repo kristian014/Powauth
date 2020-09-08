@@ -17,6 +17,7 @@ defmodule Powauthproject.Application do
       PowauthprojectWeb.Endpoint
       # Start a worker by calling: Powauthproject.Worker.start_link(arg)
       # {Powauthproject.Worker, arg}
+       # Pow.Store.Backend.MnesiaCache
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

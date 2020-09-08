@@ -1,6 +1,5 @@
 defmodule Powauthproject.Users.User do
   use Ecto.Schema
-     import Ecto.Changeset
   use Pow.Ecto.Schema
     use Pow.Extension.Ecto.Schema
 

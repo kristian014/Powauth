@@ -34,6 +34,7 @@ defmodule PowauthprojectWeb.Router do
 # resources "/users", UserController
  resources "/videos", VideoController
     get "/", PageController, :index
+    get "/:id", WatchController, :show
   end
 
   pipeline :admin do

@@ -24,6 +24,7 @@ defmodule PowauthprojectWeb do
       import Plug.Conn
       import PowauthprojectWeb.Gettext
       alias PowauthprojectWeb.Router.Helpers, as: Routes
+    import  Powauthproject.PowHelper
     end
   end
 
