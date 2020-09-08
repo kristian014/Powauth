@@ -15,6 +15,7 @@ config :powauthproject, PowauthprojectWeb.Endpoint,
 
 # Do not print debug messages in production
 config :logger, level: :info
+# config :mnesia, dir: to_charlist(System.get_env("MNESIA_DIR"))
 
 # ## SSL Support
 #

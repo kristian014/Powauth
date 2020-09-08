@@ -30,12 +30,6 @@ def list_alphabetical_categories do
   |> Repo.all()
 end
 
-  def create_video(attrs \\ %{}) do
-    %Video{}
-    |> Video.changeset(attrs)
-    |> Repo.insert()
-  end
-
 
 
   def list_videos do
@@ -53,6 +47,11 @@ end
     from(v in query, where: v.account_id == ^account_id)
   end
 
+  def get_user_video!(%Accounts.Account{} = account, id) do
+    Video
+    |> videos_query(account)
+    |> Repo.get!(id)
+  end
 
   @doc """
   Gets a single video.
@@ -88,6 +87,12 @@ end
   #   |> Repo.insert()
   # end
 
+
+  def create_video(attrs \\ %{}) do
+    %Video{}
+    |> Video.changeset(attrs)
+    |> Repo.insert()
+  end
 
 
 

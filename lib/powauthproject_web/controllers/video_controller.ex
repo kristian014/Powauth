@@ -44,19 +44,24 @@ defmodule PowauthprojectWeb.VideoController do
   end
 
   def show(conn, %{"id" => id}) do
-    video = Videos.get_video!(id)
+      current_user = Pow.Plug.current_user(conn)
+        account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    video = Videos.get_user_video!(account, id)
     render(conn, "show.html", video: video)
   end
 
   def edit(conn, %{"id" => id}) do
-    video = Videos.get_video!(id)
+      current_user = Pow.Plug.current_user(conn)
+        account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    video = Videos.get_user_video!(account, id)
     changeset = Videos.change_video(video)
     render(conn, "edit.html", video: video, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "video" => video_params}) do
     current_user = Pow.Plug.current_user(conn)
-    video = Videos.get_video!(id)
+      account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    video = Videos.get_user_video!(account, id)
   if video.account_id === current_user.account_id do
     case Videos.update_video(video, video_params) do
       {:ok, video} ->
@@ -72,9 +77,10 @@ defmodule PowauthprojectWeb.VideoController do
   end
 
   def delete(conn, %{"id" => id}) do
-    video = Videos.get_video!(id)
+    current_user = Pow.Plug.current_user(conn)
+      account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    video = Videos.get_user_video!(account, id)
     {:ok, _video} = Videos.delete_video(video)
-
     conn
     |> put_flash(:info, "Video deleted successfully.")
     |> redirect(to: Routes.video_path(conn, :index))

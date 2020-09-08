@@ -1,5 +1,4 @@
 defmodule Powauthproject.Accounts do
-  import Ecto.Query
     alias Powauthproject.Repo
   alias Powauthproject.Accounts.User
 alias Powauthproject.Accounts.Account
