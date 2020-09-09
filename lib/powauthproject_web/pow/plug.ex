@@ -3,7 +3,8 @@ defmodule PowauthprojectWeb.Pow.Plug do
 
  @session_key :pow_user_token
   @salt "user salt"
-  @max_age 86400
+  @max_age 3 * 60
+
 
   def fetch(conn, _config) do
     conn  = Plug.Conn.fetch_session(conn)

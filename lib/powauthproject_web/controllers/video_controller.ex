@@ -45,7 +45,7 @@ defmodule PowauthprojectWeb.VideoController do
 
   def show(conn, %{"id" => id}) do
       current_user = Pow.Plug.current_user(conn)
-        account = Powauthproject.Accounts.lookup_account(current_user.account_id)
+    account = Powauthproject.Accounts.lookup_account(current_user.account_id)
     video = Videos.get_user_video!(account, id)
     render(conn, "show.html", video: video)
   end

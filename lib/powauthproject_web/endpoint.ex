@@ -1,28 +1,16 @@
 defmodule PowauthprojectWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :powauthproject
- @pow_config otp_app: :powauthproject
+
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
 
-      @pow_config [
-        user: Powauthproject.Users.User,
-        repo: Powauthproject.Repo,
-         current_user_assigns_key: :current_user,
-         session_key: "auth",
-         credentials_cache_store: {Pow.Store.CredentialsCache,
-                                   ttl: :timer.minutes(30),
-                                   namespace: "credentials"},
-         session_ttl_renewal: :timer.minutes(15),
-         cache_store_backend: Pow.Store.Backend.EtsCache,
-         users_context: Pow.Ecto.Users
-       ]
 
   @session_options [
     store: :cookie,
     key: "_powauthproject_key",
     signing_salt: "530RefRy",
-     max_age: 1 * 60
+
   ]
 
   socket "/socket", PowauthprojectWeb.UserSocket,
@@ -66,12 +54,9 @@ defmodule PowauthprojectWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-   plug Pow.Plug.Session, @pow_config
-# plug Pow.Plug.Session, otp_app: :powauthproject
- plug Pow.Plug.Session, otp_app: :powauthproject,   session_ttl_renewal: :timer.minutes(1),
-     credentials_cache_store: {Pow.Store.CredentialsCache, ttl: :timer.minutes(10)}
+plug Pow.Plug.Session, otp_app: :powauthproject
 plug PowauthprojectWeb.Plug.ReloadUser
-  # plug PowPersistentSession.Plug.Cookie
+  plug PowPersistentSession.Plug.Cookie
 plug  PowauthprojectWeb.Pow.Plug, otp_app: :powauthproject
   plug PowauthprojectWeb.Router
 end
