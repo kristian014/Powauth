@@ -1,4 +1,4 @@
-defmodule Powauthproject.EnsureRolePlug do
+defmodule PowauthprojectWeb.EnsureRolePlug do
   @moduledoc """
  This plug ensures that a user has a particular role.
 
@@ -10,9 +10,10 @@ defmodule Powauthproject.EnsureRolePlug do
 
      plug MyAppWeb.EnsureRolePlug, ~w(user admin)a
  """
+
  import Plug.Conn, only: [halt: 1]
 
- alias Powauthproject.Router.Helpers, as: Routes
+ alias PowauthprojectWeb.Router.Helpers, as: Routes
  alias Phoenix.Controller
  alias Plug.Conn
  alias Pow.Plug

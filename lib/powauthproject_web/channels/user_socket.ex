@@ -2,7 +2,7 @@ defmodule PowauthprojectWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", PowauthprojectWeb.RoomChannel
+   channel "videos:*", PowauthprojectWeb.VideoChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
