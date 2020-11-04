@@ -12,10 +12,17 @@ defmodule Powauthproject.Users.User do
     timestamps()
   end
   @spec changeset(Ecto.Schema.t() | Ecto.Changeset.t(), map()) :: Ecto.Changeset.t()
+
 def changeset(user_or_changeset, attrs) do
   user_or_changeset
     |> pow_changeset(attrs)
       |> pow_extension_changeset(attrs)
+  |> Ecto.Changeset.cast(attrs, [:role])
+  |> Ecto.Changeset.validate_inclusion(:role, ~w(user admin))
+end
+
+def role_changeset(user_or_changeset, attrs) do
+  user_or_changeset
   |> Ecto.Changeset.cast(attrs, [:role])
   |> Ecto.Changeset.validate_inclusion(:role, ~w(user admin))
 end

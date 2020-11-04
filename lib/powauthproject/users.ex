@@ -1,5 +1,5 @@
 defmodule Powauthproject.Users do
-
+ import Ecto.Query, warn: false
   alias Powauthproject.{Repo, Users.User}
 
   @type t :: %User{}
@@ -21,4 +21,36 @@ end
 @spec is_admin?(t()) :: boolean()
  def is_admin?(%{role: "admin"}), do: true
  def is_admin?(_any), do: false
+
+ def update_user_role(%User{} = user, attrs) do
+    user
+    |> User.role_changeset(attrs)
+    |> Repo.update()
+  end
+
+  def update_user(%User{} = user, attrs) do
+    user
+    |> User.changeset(attrs)
+    |> Repo.update()
+  end
+
+  def delete_user(%User{} = user) do
+      Repo.delete(user)
+    end
+
+    def create_user(attrs \\ %{}) do
+   %User{}
+   |> User.changeset(attrs)
+   |> Repo.insert()
+ end
+
+ def get_user!(id), do: Repo.get!(User, id)
+
+ def list_users do
+    Repo.all(User)
+  end
+
+  def change_user(%User{} = user) do
+   User.changeset(user, %{})
+ end
 end

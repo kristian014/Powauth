@@ -10,11 +10,16 @@ defmodule PowauthprojectWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
+
+  pipeline :admin do
+     plug PowauthprojectWeb.EnsureRolePlug, :admin
+   end
 
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated, error_handler: Pow.Phoenix.PlugErrorHandler
@@ -34,16 +39,20 @@ defmodule PowauthprojectWeb.Router do
 # resources "/users", UserController
  resources "/videos", VideoController
     get "/", PageController, :index
-    get "/:id", WatchController, :show
-  end
+    #get "/:id", WatchController, :show
 
-  pipeline :admin do
-     plug PowauthprojectWeb.EnsureRolePlug, :admin
-   end
+  end
+  #
+  # scope "/", PowauthprojectWeb do
+  #     pipe_through :browser
+  #
+  #
+  #   end
+
 
    scope "/admin", PowauthprojectWeb do
      pipe_through [:browser, :admin]
-
+ resources "/users", AdminController, only: [:index, :edit, :update]
      # ...
    end
   # Other scopes may use custom stacks.

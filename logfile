@@ -49,3 +49,47 @@
 2020-09-06 14:05:11.739 BST [3420] WARNING:  could not flush dirty data: Function not implemented
 2020-09-06 14:10:02.209 BST [3642] WARNING:  could not flush dirty data: Function not implemented
 2020-09-06 14:11:18.712 BST [3710] WARNING:  could not flush dirty data: Function not implemented
+2020-09-09 19:20:57.180 BST [5245] LOG:  starting PostgreSQL 12.3 on x86_64-pc-linux-gnu, compiled by gcc-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+2020-09-09 19:20:57.213 BST [5245] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-09 19:20:57.213 BST [5245] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-09 19:20:57.220 BST [5245] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-09-09 19:20:57.289 BST [5246] LOG:  database system was shut down at 2020-09-09 19:20:49 BST
+2020-09-09 19:20:57.340 BST [5245] LOG:  database system is ready to accept connections
+2020-09-09 19:21:56.155 BST [5328] LOG:  PID 4127 in cancel request did not match any process
+2020-09-09 19:21:56.172 BST [5329] LOG:  PID 4130 in cancel request did not match any process
+2020-09-09 19:21:56.182 BST [5330] LOG:  PID 4129 in cancel request did not match any process
+2020-09-09 19:21:56.189 BST [5331] LOG:  PID 4128 in cancel request did not match any process
+2020-09-09 19:21:56.197 BST [5332] LOG:  PID 4131 in cancel request did not match any process
+2020-09-09 19:21:56.209 BST [5333] LOG:  PID 4133 in cancel request did not match any process
+2020-09-09 19:21:57.032 BST [5340] LOG:  PID 4121 in cancel request did not match any process
+2020-09-09 19:21:57.041 BST [5341] LOG:  PID 4134 in cancel request did not match any process
+2020-09-09 19:21:57.050 BST [5342] LOG:  PID 4132 in cancel request did not match any process
+2020-09-09 19:21:57.057 BST [5343] LOG:  PID 4120 in cancel request did not match any process
+2020-09-09 19:24:49.164 BST [174] LOG:  starting PostgreSQL 12.3 on x86_64-pc-linux-gnu, compiled by gcc-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+2020-09-09 19:24:49.232 BST [174] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-09 19:24:49.233 BST [174] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-09 19:24:49.251 BST [174] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-09-09 19:24:52.344 BST [175] LOG:  database system was interrupted; last known up at 2020-09-09 19:20:57 BST
+2020-09-09 19:24:52.352 BST [175] WARNING:  could not flush dirty data: Function not implemented
+2020-09-09 19:25:04.956 BST [175] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-09-09 19:25:04.984 BST [175] LOG:  redo starts at 0/2F2A430
+2020-09-09 19:25:04.985 BST [175] LOG:  invalid record length at 0/2F2A468: wanted 24, got 0
+2020-09-09 19:25:04.985 BST [175] LOG:  redo done at 0/2F2A430
+2020-09-09 19:25:05.237 BST [174] LOG:  database system is ready to accept connections
+2020-09-09 19:30:05.385 BST [176] WARNING:  could not flush dirty data: Function not implemented
+2020-09-10 15:03:23.817 BST [1665] ERROR:  syntax error at or near "2020" at character 87
+2020-09-10 15:03:23.817 BST [1665] STATEMENT:  ALTER TABLE "public"."company_energy_usage" ALTER COLUMN "period_start" SET DATA TYPE 2020-09-10;
+2020-09-10 15:04:27.628 BST [1665] ERROR:  syntax error at or near "2020" at character 87
+2020-09-10 15:04:27.628 BST [1665] STATEMENT:  ALTER TABLE "public"."company_energy_usage" ALTER COLUMN "period_start" SET DATA TYPE 2020-09-10;
+2020-09-11 14:18:22.012 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-11 14:36:02.194 BST [5867] WARNING:  autovacuum worker started without a worker entry
+2020-09-11 23:18:46.645 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-11 23:28:03.366 BST [5872] WARNING:  autovacuum worker started without a worker entry
+2020-09-11 23:33:43.534 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-11 23:33:44.025 BST [5875] WARNING:  autovacuum worker started without a worker entry
+2020-09-13 23:09:47.866 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-13 23:09:53.084 BST [6437] WARNING:  autovacuum worker started without a worker entry
+2020-09-14 23:03:30.554 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-14 23:03:30.587 BST [7669] WARNING:  autovacuum worker started without a worker entry
+2020-09-15 19:11:09.932 BST [179] WARNING:  worker took too long to start; canceled
+2020-09-15 19:11:09.946 BST [9949] WARNING:  autovacuum worker started without a worker entry

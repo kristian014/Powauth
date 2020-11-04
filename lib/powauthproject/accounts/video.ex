@@ -2,9 +2,10 @@ defmodule Powauthproject.Accounts.Video do
 use Ecto.Schema
   import Ecto.Changeset
 
+    @primary_key {:id, Powauthproject.Permalink, autogenerate: true}
   schema "videos" do
     belongs_to :account, Powauthproject.Accounts.Account
-      belongs_to :category, Powauthproject.Accounts.Category
+    belongs_to :category, Powauthproject.Accounts.Category
     field :description, :string
     field :title, :string
     field :url, :string

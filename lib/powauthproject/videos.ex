@@ -5,7 +5,7 @@ defmodule Powauthproject.Videos do
 
   import Ecto.Query, warn: false
   alias Powauthproject.Repo
-alias Powauthproject.Accounts.Video
+    alias Powauthproject.Accounts.Video
    alias Powauthproject.Accounts.Category
     alias Powauthproject.Accounts
     # alias Powauthproject.Accounts.User

@@ -18,7 +18,7 @@
       <li>Signed in as: <%= @current_user.email %></li>
          <li><%= link "My Videos", to: Routes.video_path(@conn, :index) %></li>
       <li><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
-      <!-- <%= if Powauthproject.Users.is_admin?(@current_user) do %>
+     <%= if Powauthproject.Users.is_admin?(@current_user) do %>
   <div>
   <p>You have admin access</p>
   </div>
@@ -26,7 +26,7 @@
     <div>
     <p>You have user access</p>
     </div>
-  <% end %> -->
+  <% end %>
     <% else %>
       <li><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></li>
     <% end %>
